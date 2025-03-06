@@ -21,10 +21,10 @@ const SORT_FIELD_ALPHABET = 'alphabet';
 const SORT_FIELD_LENGTH = 'length';
 
 function getPreparedGoods(goods, { sortField, reversed }) {
-  let prepearedGoods = [...goods];
+  let preparedGoods = [...goods];
 
   if (sortField) {
-    prepearedGoods.sort((good1, good2) => {
+    preparedGoods.sort((good1, good2) => {
       switch (sortField) {
         case SORT_FIELD_ALPHABET:
           return good1.localeCompare(good2);
@@ -39,10 +39,10 @@ function getPreparedGoods(goods, { sortField, reversed }) {
   }
 
   if (reversed) {
-    prepearedGoods = prepearedGoods.toReversed();
+    preparedGoods = preparedGoods.reverse();
   }
 
-  return prepearedGoods;
+  return preparedGoods;
 }
 
 export const App = () => {
